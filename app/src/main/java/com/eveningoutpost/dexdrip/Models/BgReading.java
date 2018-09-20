@@ -1412,8 +1412,17 @@ public class BgReading extends Model implements ShareUploadableBg {
             //   jsonObject.put("sensor", sensor);
             return jsonObject.toString();
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            Log.e(TAG,"Exception serializing BgReading " + e.toString());
+            if (Double.isNaN(a)) Log.e(TAG, "a is NaN");
+            if (Double.isNaN(b)) Log.e(TAG, "b is NaN");
+            if (Double.isNaN(c)) Log.e(TAG, "c is NaN");
+            if (Double.isNaN(age_adjusted_raw_value)) Log.e(TAG, "age_adjusted_raw_value is NaN");
+            if (Double.isNaN(calculated_value)) Log.e(TAG, "calculated_value is NaN");
+            if (Double.isNaN(filtered_calculated_value)) Log.e(TAG, "filtered_calculated_value is NaN");
+            if (Double.isNaN(filtered_data)) Log.e(TAG, "filtered_data is NaN");
+            if (Double.isNaN(raw_calculated)) Log.e(TAG, "raw_calculated is NaN");
+            if (Double.isNaN(raw_data)) Log.e(TAG, "raw_data is NaN");
+            if (Double.isNaN(calculated_value_slope)) Log.e(TAG, "calculated_value_slope is NaN");
             return "";
         }
     }
