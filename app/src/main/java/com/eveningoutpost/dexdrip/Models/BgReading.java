@@ -1405,7 +1405,12 @@ public class BgReading extends Model implements ShareUploadableBg {
             jsonObject.put("filtered_data", filtered_data);
             jsonObject.put("raw_calculated", raw_calculated);
             jsonObject.put("raw_data", raw_data);
-            jsonObject.put("calculated_value_slope", calculated_value_slope);
+            if (Double.isNaN(calculated_value_slope)) {
+                Log.w(TAG, "calculated_value_slope is NaN");
+                jsonObject.put("calculated_value_slope", 0);
+            }
+            else
+                jsonObject.put("calculated_value_slope", calculated_value_slope);
             if (sendCalibration) {
                 jsonObject.put("calibration_uuid", calibration_uuid);
             }
@@ -1422,7 +1427,6 @@ public class BgReading extends Model implements ShareUploadableBg {
             if (Double.isNaN(filtered_data)) Log.e(TAG, "filtered_data is NaN");
             if (Double.isNaN(raw_calculated)) Log.e(TAG, "raw_calculated is NaN");
             if (Double.isNaN(raw_data)) Log.e(TAG, "raw_data is NaN");
-            if (Double.isNaN(calculated_value_slope)) Log.e(TAG, "calculated_value_slope is NaN");
             return "";
         }
     }
