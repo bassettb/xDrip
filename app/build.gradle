@@ -208,7 +208,12 @@ dependencies {
     implementation('com.github.nightscout:android-uploader:CORE_FOR_XDRIP') {
         transitive = false
     }
-
+    //noinspection GradleDependency
+    implementation 'com.android.databinding:adapters:3.1.4'
+    // noinspection GradleDependency
+    implementation 'com.android.databinding:library:3.1.4'
+    // noinspection GradleDependency
+    implementation 'com.android.databinding:baseLibrary:3.1.4'
     implementation project(':localeapi')
     //implementation 'com.nispok:snackbar:2.10.8'
     implementation 'com.android.support:appcompat-v7:26.1.0'
