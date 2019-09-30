@@ -46,6 +46,9 @@ public class RouteFinder {
         // tasker interface
         routes.add(new RouteInfo("tasker/", "WebServiceTasker"));
 
+        // alerts interface
+        routes.add(new RouteInfo("alerts", "WebServiceAlerts"));
+
     }
 
     // process a received route

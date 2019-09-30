@@ -85,6 +85,14 @@ public class WebServiceModule {
         return new WebServiceSync();
     }
 
+    @Provides
+    @Singleton
+    @Named("WebServiceAlerts")
+    BaseWebService providesWebServiceAlerts() {
+        if (d) Log.d("INJECT", "creating WebServiceAlerts");
+        return new WebServiceAlerts();
+    }
+
 
 
 }
